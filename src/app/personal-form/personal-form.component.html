@@ -1,0 +1,71 @@
+<form [formGroup]="profileForm" class="form-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Formulario de trabajadores</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Apellido Paterno</mat-label>
+                        <input id="ApPaterno" matInput placeholder="xxx" formControlName="ApPaterno">
+                    </mat-form-field>
+
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Apellido Materno</mat-label>
+                        <input id="ApMaterno" matInput placeholder="xxx" formControlName="ApMaterno">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Primer Nombre</mat-label>
+                        <input id="Nombre1" matInput placeholder="xxxx" formControlName="Nombre1">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Segundo Nombre</mat-label>
+                        <input id="Nombre2" matInput placeholder="xxx" formControlName="Nombre2">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <hr />
+                    <span>Nombre Completo: {{profileForm.value.Nombre1}} {{profileForm.value.Nombre2}} {{profileForm.value.ApPaterno}} {{profileForm.value.ApMaterno}}</span>
+                    <hr />
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Fecha de nacimiento</mat-label>
+                        <input matInput [matDatepicker]="picker1" id="FchNac"
+                            formControlName="FchNac">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>DNI</mat-label>
+                        <input id="Dni" matInput placeholder="xxx" formControlName="Dni">
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="onSubmit()" mat-raised-button color="primary">Guardar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
+
+ 
